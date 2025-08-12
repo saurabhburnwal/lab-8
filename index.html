@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6">Restaurant Manager</h1>
+        
+        <div class="bg-white rounded-lg shadow overflow-hidden mb-6">
+            <table class="min-w-full">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="px-4 py-2 text-left">ID</th>
+                        <th class="px-4 py-2 text-left">Name</th>
+                        <th class="px-4 py-2 text-left">Cuisine</th>
+                        <th class="px-4 py-2 text-left">Open</th>
+                        <th class="px-4 py-2 text-left">Price</th>
+                        <th class="px-4 py-2 text-left">Rating</th>
+                        <th class="px-4 py-2 text-left">Reviews</th>
+                        <th class="px-4 py-2 text-left">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="restaurants-table">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-4">
+            <h2 class="text-xl font-semibold mb-4" id="form-title">Add New Restaurant</h2>
+            <form id="restaurant-form" class="space-y-4">
+                <input type="hidden" id="restaurant-id">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Name</label>
+                        <input type="text" id="name" class="w-full p-2 border rounded" placeholder="e.g., Cafe Bloom">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Cuisine</label>
+                        <input type="text" id="cuisine" class="w-full p-2 border rounded" placeholder="e.g., Italian">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Open</label>
+                        <div class="flex items-center h-10">
+                            <input type="checkbox" id="is_open" class="w-5 h-5 mr-2">
+                            <span class="text-sm text-gray-700">Check if open</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Price Range</label>
+                        <select id="price_range" class="w-full p-2 border rounded">
+                            <option value="$">$</option>
+                            <option value="$$">$$</option>
+                            <option value="$$$">$$$</option>
+                            <option value="$$$$">$$$$</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Rating</label>
+                        <input type="number" id="rating" step="0.1" min="0" max="5" class="w-full p-2 border rounded" placeholder="0 - 5">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Reviews</label>
+                        <input type="number" id="number_of_reviews" min="0" class="w-full p-2 border rounded" placeholder="e.g., 10">
+                    </div>
+                </div>
+                <div class="flex space-x-2">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Save</button>
+                    <button type="button" id="cancel-btn" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
