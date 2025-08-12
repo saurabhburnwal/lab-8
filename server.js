@@ -86,6 +86,10 @@ app.delete('/restaurants/:id', asyncHandler(async (req, res) => {
     res.status(204).end()
 }))
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'))
+})
+
 // Centralized error handler
 app.use((err, req, res, next) => {
     console.error('[ERROR]', err)
