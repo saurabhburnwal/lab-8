@@ -1,540 +1,272 @@
 [
   {
     "id": "1",
-    "is_open": false,
-    "name": "The Gourmet Kitchen",
-    "cuisine": "European",
-    "address": {
-      "street": "123 Foodie Lane",
-      "city": "Flavortown",
-      "state": "CA",
-      "zipcode": "90210"
-    },
-    "price_range": "$$",
-    "ambiance": "Cozy",
-    "dietary_options": [
-      "Vegetarian"
-    ],
-    "tags": [
-      "italian",
-      "pasta",
-      "pizza",
-      "classic",
-      "date night"
-    ],
-    "number_of_reviews": 2,
-    "rating": 4.5,
-    "reviews": [
-      {
-        "username": "FoodLover123",
-        "rating": 5,
-        "comment": "Absolutely fantastic! The pasta was divine."
-      },
-      {
-        "username": "CriticalEater",
-        "rating": 4,
-        "comment": "Great food, but the service was a bit slow."
-      }
-    ],
-    "website": "https://example.com/thegourmetkitchen"
+    "name": "Cafe Bloom",
+    "cuisine": "Cafe",
+    "is_open": true,
+    "price_range": "$",
+    "rating": 4.3,
+    "number_of_reviews": 12
   },
   {
     "id": "2",
-    "is_open": false,
     "name": "Spice Route",
     "cuisine": "Asian",
-    "address": {
-      "street": "456 Curry Road",
-      "city": "Aromaville",
-      "state": "NY",
-      "zipcode": "10001"
-    },
+    "is_open": false,
     "price_range": "$$",
-    "ambiance": "Cozy",
-    "dietary_options": [
-      "Gluten-Free"
-    ],
-    "tags": [
-      "indian",
-      "curry",
-      "spicy",
-      "authentic",
-      "butter chicken"
-    ],
-    "number_of_reviews": 2,
-    "rating": 4.8,
-    "reviews": [
-      {
-        "username": "SpiceFan",
-        "rating": 5,
-        "comment": "The best butter chicken I have ever had! A must-try."
-      },
-      {
-        "username": "GlobalTaster",
-        "rating": 4.5,
-        "comment": "Authentic flavors and a wonderful ambiance."
-      }
-    ],
-    "website": "https://example.com/spiceroute"
+    "rating": 4.6,
+    "number_of_reviews": 8
   },
   {
     "id": "3",
-    "is_open": false,
-    "name": "Sushi Central",
-    "cuisine": "Asian",
-    "address": {
-      "street": "789 Wasabi Ave",
-      "city": "Tokyoville",
-      "state": "CA",
-      "zipcode": "90211"
-    },
+    "name": "Pasta Corner",
+    "cuisine": "Italian",
+    "is_open": true,
     "price_range": "$$",
-    "ambiance": "Modern",
-    "dietary_options": [
-      "Vegan"
-    ],
-    "tags": [
-      "japanese",
-      "sushi",
-      "sashimi",
-      "fresh seafood",
-      "modern"
-    ],
-    "number_of_reviews": 2,
-    "rating": 4.7,
-    "reviews": [
-      {
-        "username": "SushiSnob",
-        "rating": 5,
-        "comment": "Incredibly fresh fish and perfectly seasoned rice."
-      },
-      {
-        "username": "CasualDiner",
-        "rating": 4,
-        "comment": "Good sushi, a bit pricey but worth it for the quality."
-      }
-    ],
-    "website": "https://example.com/sushicentral"
+    "rating": 4.1,
+    "number_of_reviews": 6
   },
   {
     "id": "4",
+    "name": "Burger Hub",
+    "cuisine": "American",
     "is_open": true,
-    "name": "Taco Fiesta",
-    "cuisine": "Latin American",
-    "address": {
-      "street": "101 Sombrero Street",
-      "city": "Festiville",
-      "state": "TX",
-      "zipcode": "73301"
-    },
     "price_range": "$",
-    "ambiance": "Modern",
-    "dietary_options": [
-      "Vegetarian"
-    ],
-    "tags": [
-      "mexican",
-      "tacos",
-      "burritos",
-      "lively",
-      "casual",
-      "al pastor"
-    ],
-    "number_of_reviews": 2,
-    "rating": 4.6,
-    "reviews": [
-      {
-        "username": "TacoTuesdayFan",
-        "rating": 5,
-        "comment": "The Al Pastor tacos are a flavor explosion! 🌮"
-      },
-      {
-        "username": "MargaritaMike",
-        "rating": 4,
-        "comment": "Great tacos, vibrant atmosphere, but a bit loud."
-      }
-    ],
-    "website": "https://example.com/tacofiesta"
+    "rating": 4.0,
+    "number_of_reviews": 10
   },
   {
     "id": "5",
+    "name": "Sushi Go",
+    "cuisine": "Japanese",
     "is_open": false,
-    "name": "The Noodle Bowl",
-    "cuisine": "Asian",
-    "address": {
-      "street": "212 Pho Place",
-      "city": "Saigon Springs",
-      "state": "WA",
-      "zipcode": "98101"
-    },
-    "price_range": "$",
-    "ambiance": "Casual",
-    "dietary_options": [
-      "Gluten-Free"
-    ],
-    "tags": [
-      "vietnamese",
-      "pho",
-      "banh mi",
-      "noodle soup",
-      "authentic",
-      "casual"
-    ],
-    "number_of_reviews": 2,
-    "rating": 4.9,
-    "reviews": [
-      {
-        "username": "PhoReal",
-        "rating": 5,
-        "comment": "The most authentic Pho I've had outside of Vietnam. The broth is incredible."
-      },
-      {
-        "username": "BanhMiBuff",
-        "rating": 5,
-        "comment": "Perfect Banh Mi. The bread was perfectly crispy and soft."
-      }
-    ],
-    "website": "https://example.com/thenoodlebowl"
+    "price_range": "$$$",
+    "rating": 4.7,
+    "number_of_reviews": 15
   },
   {
     "id": "6",
-    "is_open": false,
-    "name": "The Golden Elephant",
-    "cuisine": "Asian",
-    "address": {
-      "street": "333 Orchid Lane",
-      "city": "Bangkok Bay",
-      "state": "FL",
-      "zipcode": "33101"
-    },
-    "price_range": "$$",
-    "ambiance": "Cozy",
-    "dietary_options": [
-      "Vegan"
-    ],
-    "tags": [
-      "thai",
-      "pad thai",
-      "curry",
-      "spicy",
-      "noodles"
-    ],
-    "number_of_reviews": 1,
-    "rating": 4.7,
-    "reviews": [
-      {
-        "username": "ThaiFoodie",
-        "rating": 5,
-        "comment": "Green curry was perfectly balanced and spicy."
-      }
-    ],
-    "website": "https://example.com/thegoldenelephant"
+    "name": "Taco Fiesta",
+    "cuisine": "Mexican",
+    "is_open": true,
+    "price_range": "$",
+    "rating": 4.2,
+    "number_of_reviews": 9
   },
   {
     "id": "7",
+    "name": "Green Garden",
+    "cuisine": "Vegetarian",
     "is_open": false,
-    "name": "Opa!",
-    "cuisine": "European",
-    "address": {
-      "street": "444 Acropolis Ave",
-      "city": "Athens Heights",
-      "state": "GA",
-      "zipcode": "30301"
-    },
     "price_range": "$$",
-    "ambiance": "Casual",
-    "dietary_options": [
-      "Vegetarian"
-    ],
-    "tags": [
-      "greek",
-      "gyro",
-      "mediterranean",
-      "lamb",
-      "healthy"
-    ],
-    "number_of_reviews": 1,
-    "rating": 4.8,
-    "reviews": [
-      {
-        "username": "GyroHero",
-        "rating": 5,
-        "comment": "The lamb gyro was tender and flavorful. Best I've had in ages!"
-      }
-    ],
-    "website": "https://example.com/opa"
+    "rating": 4.5,
+    "number_of_reviews": 7
   },
   {
     "id": "8",
-    "is_open": false,
-    "name": "Le Bistrot Parisien",
-    "cuisine": "European",
-    "address": {
-      "street": "555 Eiffel Tower Rd",
-      "city": "Parisian Ville",
-      "state": "LA",
-      "zipcode": "70112"
-    },
-    "price_range": "$$$",
-    "ambiance": "Cozy",
-    "dietary_options": [
-      "Gluten-Free"
-    ],
-    "tags": [
-      "french",
-      "bistro",
-      "steak frites",
-      "romantic",
-      "classic"
-    ],
-    "number_of_reviews": 1,
-    "rating": 4.6,
-    "reviews": [
-      {
-        "username": "FrenchCuisineFan",
-        "rating": 4.5,
-        "comment": "Charming atmosphere. The Coq au Vin was rich and delicious."
-      }
-    ],
-    "website": "https://example.com/lebistrot"
+    "name": "Curry House",
+    "cuisine": "Indian",
+    "is_open": true,
+    "price_range": "$$",
+    "rating": 4.4,
+    "number_of_reviews": 11
   },
   {
     "id": "9",
-    "is_open": false,
-    "name": "Dragon's Wok",
-    "cuisine": "Asian",
-    "address": {
-      "street": "666 Lantern Street",
-      "city": "Beijing Junction",
-      "state": "IL",
-      "zipcode": "60601"
-    },
-    "price_range": "$$",
-    "ambiance": "Casual",
-    "dietary_options": [
-      "Vegan"
-    ],
-    "tags": [
-      "chinese",
-      "wok",
-      "dim sum",
-      "spicy",
-      "sichuan"
-    ],
-    "number_of_reviews": 1,
-    "rating": 4.4,
-    "reviews": [
-      {
-        "username": "DimSumLover",
-        "rating": 4,
-        "comment": "Great selection of Dim Sum. A bit crowded on weekends."
-      }
-    ],
-    "website": "https://example.com/dragonswok"
+    "name": "Noodle Nest",
+    "cuisine": "Chinese",
+    "is_open": true,
+    "price_range": "$",
+    "rating": 4.1,
+    "number_of_reviews": 13
   },
   {
     "id": "10",
+    "name": "BBQ Barn",
+    "cuisine": "American",
     "is_open": false,
-    "name": "El Faro",
-    "cuisine": "European",
-    "address": {
-      "street": "777 Flamenco Way",
-      "city": "Madrid Meadows",
-      "state": "NM",
-      "zipcode": "87501"
-    },
-    "price_range": "$$$",
-    "ambiance": "Cozy",
-    "dietary_options": [
-      "Vegetarian"
-    ],
-    "tags": [
-      "spanish",
-      "paella",
-      "tapas",
-      "seafood",
-      "authentic"
-    ],
-    "number_of_reviews": 1,
-    "rating": 4.9,
-    "reviews": [
-      {
-        "username": "TapasKing",
-        "rating": 5,
-        "comment": "Paella was absolutely stunning, packed with seafood and flavor."
-      }
-    ],
-    "website": "https://example.com/elfaro"
+    "price_range": "$$",
+    "rating": 4.3,
+    "number_of_reviews": 5
   },
   {
     "id": "11",
+    "name": "Pizza Plaza",
+    "cuisine": "Italian",
     "is_open": true,
-    "name": "Seoul Food",
-    "cuisine": "Asian",
-    "address": {
-      "street": "888 Kimchi Blvd",
-      "city": "K-Town",
-      "state": "CA",
-      "zipcode": "90005"
-    },
-    "price_range": "$$",
-    "ambiance": "Modern",
-    "dietary_options": [
-      "Gluten-Free"
-    ],
-    "tags": [
-      "korean",
-      "bbq",
-      "bibimbap",
-      "kimchi",
-      "k-town"
-    ],
-    "number_of_reviews": 1,
-    "rating": 4.7,
-    "reviews": [
-      {
-        "username": "KBBQFanatic",
-        "rating": 5,
-        "comment": "The all-you-can-eat Korean BBQ is a must-try. High-quality meat!"
-      }
-    ],
-    "website": "https://example.com/seoulfood"
+    "price_range": "$",
+    "rating": 3.9,
+    "number_of_reviews": 14
   },
   {
     "id": "12",
+    "name": "Bagel Bite",
+    "cuisine": "Bakery",
     "is_open": true,
-    "name": "Churrascaria Brasil",
-    "cuisine": "Latin American",
-    "address": {
-      "street": "999 Samba Square",
-      "city": "Rio Rancho",
-      "state": "AZ",
-      "zipcode": "85001"
-    },
-    "price_range": "$$$$",
-    "ambiance": "Modern",
-    "dietary_options": [
-      "Vegan"
-    ],
-    "tags": [
-      "brazilian",
-      "churrascaria",
-      "steakhouse",
-      "rodizio",
-      "meat-lover"
-    ],
-    "number_of_reviews": 1,
-    "rating": 4.8,
-    "reviews": [
-      {
-        "username": "MeatLover",
-        "rating": 5,
-        "comment": "Endless skewers of perfectly cooked meat. A carnivore's paradise."
-      }
-    ],
-    "website": "https://example.com/churrascaria"
+    "price_range": "$",
+    "rating": 4.0,
+    "number_of_reviews": 4
   },
   {
     "id": "13",
+    "name": "Pho Point",
+    "cuisine": "Vietnamese",
     "is_open": false,
-    "name": "Istanbul Grill",
-    "cuisine": "European",
-    "address": {
-      "street": "111 Bosphorus St",
-      "city": "Constantinople Corner",
-      "state": "VA",
-      "zipcode": "22101"
-    },
     "price_range": "$$",
-    "ambiance": "Cozy",
-    "dietary_options": [
-      "Vegetarian"
-    ],
-    "tags": [
-      "turkish",
-      "kebab",
-      "grill",
-      "mediterranean",
-      "halal"
-    ],
-    "number_of_reviews": 1,
     "rating": 4.6,
-    "reviews": [
-      {
-        "username": "KebabConnoisseur",
-        "rating": 4.5,
-        "comment": "The Adana kebab was spicy and delicious. Authentic taste."
-      }
-    ],
-    "website": "https://example.com/istanbulgrill"
+    "number_of_reviews": 16
   },
   {
     "id": "14",
+    "name": "Sushi Spot",
+    "cuisine": "Japanese",
     "is_open": true,
-    "name": "Smokey's BBQ",
-    "cuisine": "American",
-    "address": {
-      "street": "222 Hickory Smoke Rd",
-      "city": "Memphis",
-      "state": "TN",
-      "zipcode": "37501"
-    },
-    "price_range": "$",
-    "ambiance": "Casual",
-    "dietary_options": [
-      "Gluten-Free"
-    ],
-    "tags": [
-      "american",
-      "bbq",
-      "southern",
-      "smoked meat",
-      "brisket",
-      "casual"
-    ],
-    "number_of_reviews": 1,
-    "rating": 4.7,
-    "reviews": [
-      {
-        "username": "BBQMaster",
-        "rating": 5,
-        "comment": "The brisket melts in your mouth. True southern BBQ."
-      }
-    ],
-    "website": "https://example.com/smokeysbbq"
+    "price_range": "$$$",
+    "rating": 4.8,
+    "number_of_reviews": 18
   },
   {
     "id": "15",
+    "name": "Pancake Place",
+    "cuisine": "Breakfast",
+    "is_open": true,
+    "price_range": "$",
+    "rating": 4.2,
+    "number_of_reviews": 20
+  },
+  {
+    "id": "16",
+    "name": "Dosa Deli",
+    "cuisine": "South Indian",
     "is_open": false,
-    "name": "The Olive Branch",
-    "cuisine": "European",
-    "address": {
-      "street": "321 Olive Grove",
-      "city": "Port Santorini",
-      "state": "MD",
-      "zipcode": "21201"
-    },
-    "price_range": "$$",
-    "ambiance": "Casual",
-    "dietary_options": [
-      "Vegan"
-    ],
-    "tags": [
-      "mediterranean",
-      "shawarma",
-      "hummus",
-      "healthy",
-      "pita"
-    ],
-    "number_of_reviews": 1,
+    "price_range": "$",
     "rating": 4.5,
-    "reviews": [
-      {
-        "username": "HealthyEats",
-        "rating": 4.5,
-        "comment": "Fresh ingredients and healthy options. The hummus platter is great for sharing."
-      }
-    ],
-    "website": "https://example.com/theolivebranch"
+    "number_of_reviews": 9
+  },
+  {
+    "id": "17",
+    "name": "Kebab Kitchen",
+    "cuisine": "Middle Eastern",
+    "is_open": true,
+    "price_range": "$$",
+    "rating": 4.4,
+    "number_of_reviews": 12
+  },
+  {
+    "id": "18",
+    "name": "Ramen Rave",
+    "cuisine": "Japanese",
+    "is_open": true,
+    "price_range": "$$",
+    "rating": 4.3,
+    "number_of_reviews": 6
+  },
+  {
+    "id": "19",
+    "name": "Bistro Bay",
+    "cuisine": "French",
+    "is_open": false,
+    "price_range": "$$$",
+    "rating": 4.6,
+    "number_of_reviews": 7
+  },
+  {
+    "id": "20",
+    "name": "Grill Grove",
+    "cuisine": "Grill",
+    "is_open": true,
+    "price_range": "$$",
+    "rating": 4.1,
+    "number_of_reviews": 8
+  },
+  {
+    "id": "21",
+    "name": "Salad Station",
+    "cuisine": "Healthy",
+    "is_open": true,
+    "price_range": "$",
+    "rating": 3.8,
+    "number_of_reviews": 5
+  },
+  {
+    "id": "22",
+    "name": "Wok Way",
+    "cuisine": "Chinese",
+    "is_open": false,
+    "price_range": "$",
+    "rating": 4.0,
+    "number_of_reviews": 9
+  },
+  {
+    "id": "23",
+    "name": "Tandoori Table",
+    "cuisine": "Indian",
+    "is_open": true,
+    "price_range": "$$",
+    "rating": 4.5,
+    "number_of_reviews": 11
+  },
+  {
+    "id": "24",
+    "name": "Dumpling Den",
+    "cuisine": "Chinese",
+    "is_open": true,
+    "price_range": "$",
+    "rating": 4.2,
+    "number_of_reviews": 13
+  },
+  {
+    "id": "25",
+    "name": "Seafood Shack",
+    "cuisine": "Seafood",
+    "is_open": false,
+    "price_range": "$$$",
+    "rating": 4.7,
+    "number_of_reviews": 10
+  },
+  {
+    "id": "26",
+    "name": "Vegan Vibes",
+    "cuisine": "Vegan",
+    "is_open": true,
+    "price_range": "$$",
+    "rating": 4.4,
+    "number_of_reviews": 12
+  },
+  {
+    "id": "27",
+    "name": "Burrito Boulevard",
+    "cuisine": "Mexican",
+    "is_open": true,
+    "price_range": "$",
+    "rating": 4.1,
+    "number_of_reviews": 14
+  },
+  {
+    "id": "28",
+    "name": "Falafel Factory",
+    "cuisine": "Mediterranean",
+    "is_open": false,
+    "price_range": "$",
+    "rating": 4.3,
+    "number_of_reviews": 6
+  },
+  {
+    "id": "29",
+    "name": "Steak Street",
+    "cuisine": "Steakhouse",
+    "is_open": true,
+    "price_range": "$$$",
+    "rating": 4.6,
+    "number_of_reviews": 9
+  },
+  {
+    "id": "30",
+    "name": "Pasta Point",
+    "cuisine": "Italian",
+    "is_open": true,
+    "price_range": "$$",
+    "rating": 4.2,
+    "number_of_reviews": 8
   }
 ]
