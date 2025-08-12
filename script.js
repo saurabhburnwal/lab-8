@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', e => {
         e.preventDefault()
+        const currentId = (document.getElementById('restaurant-id').value || '').trim()
         const payload = {
             name: document.getElementById('name').value,
             cuisine: document.getElementById('cuisine').value,
@@ -43,8 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
             number_of_reviews: parseInt(document.getElementById('number_of_reviews').value || '0', 10) || 0
         }
 
-        if (editingId) {
-            fetch(`http://localhost:3000/restaurants/${editingId}`, {
+        if (currentId) {
+            fetch(`http://localhost:3000/restaurants/${currentId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
@@ -63,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function resetForm() {
         form.reset()
         editingId = null
+        document.getElementById('restaurant-id').value = ''
         formTitle.textContent = 'Add New Restaurant'
     }
 
