@@ -1,9 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const tableBody = document.getElementById('restaurants-table')
-    const form = document.getElementById('restaurant-form')
-    const cancelBtn = document.getElementById('cancel-btn')
-    const formTitle = document.getElementById('form-title')
-    const hiddenId = document.getElementById('restaurant-id')
+    const tableBody = document.querySelector('#restaurants-table')
+    const form = document.querySelector('#restaurant-form')
+    const cancelBtn = document.querySelector('#cancel-btn')
+    const formTitle = document.querySelector('#form-title')
+    const hiddenId = document.querySelector('#restaurant-id')
+    const nameInput = document.querySelector('#name')
+    const cuisineInput = document.querySelector('#cuisine')
+    const isOpenInput = document.querySelector('#is_open')
+    const priceRangeSelect = document.querySelector('#price_range')
+    const ratingInput = document.querySelector('#rating')
+    const reviewsInput = document.querySelector('#number_of_reviews')
     const API_BASE = `${location.protocol}//${location.hostname}:5000`
     
     const badge = (open) => `<span class="px-2 py-1 rounded-full text-xs ${open ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}">${open ? 'Open' : 'Closed'}</span>`
@@ -32,12 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault()
         const currentId = (hiddenId.value || '').trim()
         const payload = {
-            name: document.getElementById('name').value,
-            cuisine: document.getElementById('cuisine').value,
-            is_open: document.getElementById('is_open').checked,
-            price_range: document.getElementById('price_range').value,
-            rating: parseFloat(document.getElementById('rating').value || '0') || 0,
-            number_of_reviews: parseInt(document.getElementById('number_of_reviews').value || '0', 10) || 0
+            name: nameInput.value,
+            cuisine: cuisineInput.value,
+            is_open: isOpenInput.checked,
+            price_range: priceRangeSelect.value,
+            rating: parseFloat(ratingInput.value || '0') || 0,
+            number_of_reviews: parseInt(reviewsInput.value || '0', 10) || 0
         }
         if (currentId) {
             await fetch(`${API_BASE}/restaurants/${currentId}`, {
@@ -68,12 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const res = await fetch(`${API_BASE}/restaurants/${id}`)
             const item = await res.json()
             hiddenId.value = item.id
-            document.getElementById('name').value = item.name || ''
-            document.getElementById('cuisine').value = item.cuisine || ''
-            document.getElementById('is_open').checked = !!item.is_open
-            document.getElementById('price_range').value = item.price_range || '$'
-            document.getElementById('rating').value = item.rating ?? ''
-            document.getElementById('number_of_reviews').value = item.number_of_reviews ?? ''
+            nameInput.value = item.name || ''
+            cuisineInput.value = item.cuisine || ''
+            isOpenInput.checked = !!item.is_open
+            priceRangeSelect.value = item.price_range || '$'
+            ratingInput.value = item.rating ?? ''
+            reviewsInput.value = item.number_of_reviews ?? ''
             formTitle.textContent = 'Edit Restaurant'
         }
         if (e.target.classList.contains('delete-btn')) {
