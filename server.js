@@ -1,5 +1,5 @@
 import express from 'express'
-import fs from 'node:fs'
+import { promises as fs } from 'node:fs'
 import path from 'node:path'
 import cors from 'cors'
 import { fileURLToPath } from 'node:url'
@@ -14,79 +14,86 @@ app.use(express.static(__dirname))
 
 const dataPath = path.join(__dirname, 'data.json')
 
-function readData() {
-    const raw = fs.readFileSync(dataPath, 'utf-8')
+const allowedFields = ['name', 'cuisine', 'is_open', 'price_range', 'rating', 'number_of_reviews']
+
+const sanitizePayload = (body = {}) => {
+    const out = {}
+    if (typeof body.name === 'string') out.name = body.name
+    if (typeof body.cuisine === 'string') out.cuisine = body.cuisine
+    if (typeof body.is_open === 'boolean') out.is_open = body.is_open
+    if (typeof body.price_range === 'string') out.price_range = body.price_range
+    if (body.rating !== undefined) {
+        const val = Number(body.rating)
+        if (!Number.isNaN(val)) out.rating = val
+    }
+    if (body.number_of_reviews !== undefined) {
+        const val = parseInt(body.number_of_reviews, 10)
+        if (!Number.isNaN(val)) out.number_of_reviews = val
+    }
+    return out
+}
+
+async function readData() {
+    const raw = await fs.readFile(dataPath, 'utf-8')
     return JSON.parse(raw)
 }
 
-function writeData(data) {
-    fs.writeFileSync(dataPath, JSON.stringify(data, null, 2))
+async function writeData(data) {
+    await fs.writeFile(dataPath, JSON.stringify(data, null, 2))
 }
 
-app.get('/restaurants', (req, res) => {
-    try {
-        const data = readData()
-        res.json(data)
-    } catch (e) {
-        res.status(500).json({ error: 'Failed to read data.json', details: e.message })
-    }
+const asyncHandler = (fn) => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
+
+app.get('/restaurants', asyncHandler(async (req, res) => {
+    const data = await readData()
+    res.json(data)
+}))
+
+app.get('/restaurants/:id', asyncHandler(async (req, res) => {
+    const data = await readData()
+    const item = data.find(r => String(r.id) === String(req.params.id))
+    if (!item) return res.status(404).json({ error: 'Not found' })
+    res.json(item)
+}))
+
+app.post('/restaurants', asyncHandler(async (req, res) => {
+    const data = await readData()
+    const numericIds = data.map(r => parseInt(r.id, 10)).filter(n => !Number.isNaN(n))
+    const nextId = (numericIds.length ? Math.max(...numericIds) + 1 : 1).toString()
+    const payload = sanitizePayload(req.body)
+    const newItem = { id: nextId, ...payload }
+    data.push(newItem)
+    await writeData(data)
+    res.status(201).location(`/restaurants/${newItem.id}`).json(newItem)
+}))
+
+app.put('/restaurants/:id', asyncHandler(async (req, res) => {
+    const data = await readData()
+    const idx = data.findIndex(r => String(r.id) === String(req.params.id))
+    if (idx === -1) return res.status(404).json({ error: 'Not found' })
+    const payload = sanitizePayload(req.body)
+    const updated = { ...data[idx], ...payload, id: data[idx].id }
+    data[idx] = updated
+    await writeData(data)
+    res.json(updated)
+}))
+
+app.delete('/restaurants/:id', asyncHandler(async (req, res) => {
+    const data = await readData()
+    const filtered = data.filter(r => String(r.id) !== String(req.params.id))
+    if (filtered.length === data.length) return res.status(404).json({ error: 'Not found' })
+    await writeData(filtered)
+    res.status(204).end()
+}))
+
+// Centralized error handler
+app.use((err, req, res, next) => {
+    console.error('[ERROR]', err)
+    const status = err.status || 500
+    res.status(status).json({ error: err.message || 'Internal Server Error' })
 })
 
-app.get('/restaurants/:id', (req, res) => {
-    try {
-        const data = readData()
-        const item = data.find(r => String(r.id) === String(req.params.id))
-        if (!item) return res.status(404).json({ error: 'Not found' })
-        res.json(item)
-    } catch (e) {
-        res.status(500).json({ error: 'Failed to read data.json', details: e.message })
-    }
-})
-
-app.post('/restaurants', (req, res) => {
-    try {
-        const data = readData()
-        const numericIds = data.map(r => parseInt(r.id, 10)).filter(n => !Number.isNaN(n))
-        const nextId = (numericIds.length ? Math.max(...numericIds) + 1 : 1).toString()
-        const newItem = { id: nextId, ...req.body }
-        data.push(newItem)
-        writeData(data)
-        res.status(201).json(newItem)
-    } catch (e) {
-        res.status(500).json({ error: 'Failed to create item', details: e.message })
-    }
-})
-
-app.put('/restaurants/:id', (req, res) => {
-    try {
-        const data = readData()
-        const idx = data.findIndex(r => String(r.id) === String(req.params.id))
-        if (idx === -1) return res.status(404).json({ error: 'Not found' })
-        const updated = { ...data[idx], ...req.body, id: data[idx].id }
-        data[idx] = updated
-        writeData(data)
-        res.json(updated)
-    } catch (e) {
-        res.status(500).json({ error: 'Failed to update item', details: e.message })
-    }
-})
-
-app.delete('/restaurants/:id', (req, res) => {
-    try {
-        const data = readData()
-        const filtered = data.filter(r => String(r.id) !== String(req.params.id))
-        if (filtered.length === data.length) return res.status(404).json({ error: 'Not found' })
-        writeData(filtered)
-        res.status(204).end()
-    } catch (e) {
-        res.status(500).json({ error: 'Failed to delete item', details: e.message })
-    }
-})
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'))
-})
-
-app.listen(3000, () => {
-    console.log('Server running on http://localhost:3000')
+const PORT = process.env.PORT || 5000
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`)
 })
