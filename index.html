@@ -7,10 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 p-4">
-    <div class="max-w-6xl mx-auto">
-        <h1 class="text-3xl font-bold mb-6">Restaurant Manager</h1>
+    <main class="max-w-6xl mx-auto">
+        <header class="mb-6">
+            <h1 class="text-3xl font-bold">Restaurant Manager</h1>
+        </header>
         
-        <div class="bg-white rounded-lg shadow overflow-hidden mb-6">
+        <section class="bg-white rounded-lg shadow overflow-hidden mb-6">
             <table class="min-w-full">
                 <thead class="bg-gray-200">
                     <tr>
@@ -24,12 +26,11 @@
                         <th class="px-4 py-2 text-left">Actions</th>
                     </tr>
                 </thead>
-                <tbody id="restaurants-table">
-                </tbody>
+        <tbody id="restaurants-table"></tbody>
             </table>
-        </div>
+    </section>
 
-        <div class="bg-white rounded-lg shadow p-4">
+    <section class="bg-white rounded-lg shadow p-4" aria-labelledby="form-title">
             <h2 class="text-xl font-semibold mb-4" id="form-title">Add New Restaurant</h2>
             <form id="restaurant-form" class="space-y-4">
                 <input type="hidden" id="restaurant-id">
@@ -72,9 +73,10 @@
                     <button type="button" id="cancel-btn" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded">Cancel</button>
                 </div>
             </form>
-        </div>
-    </div>
+        </section>
+    </main>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
+
 </html>
