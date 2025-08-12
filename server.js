@@ -4,20 +4,16 @@ import path from 'node:path'
 import cors from 'cors'
 import { fileURLToPath } from 'node:url'
 
-// __dirname in ESM
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const app = express()
 app.use(express.json())
 app.use(cors())
-
-// Serve static files (including index.html)
 app.use(express.static(__dirname))
 
 const dataPath = path.join(__dirname, 'data.json')
 
-// Helpers to read/write JSON safely
 function readData() {
     const raw = fs.readFileSync(dataPath, 'utf-8')
     return JSON.parse(raw)
@@ -27,8 +23,6 @@ function writeData(data) {
     fs.writeFileSync(dataPath, JSON.stringify(data, null, 2))
 }
 
-// Restaurants CRUD aligned to data.json schema
-// GET all
 app.get('/restaurants', (req, res) => {
     try {
         const data = readData()
@@ -38,7 +32,6 @@ app.get('/restaurants', (req, res) => {
     }
 })
 
-// GET one by id (string)
 app.get('/restaurants/:id', (req, res) => {
     try {
         const data = readData()
@@ -50,7 +43,6 @@ app.get('/restaurants/:id', (req, res) => {
     }
 })
 
-// CREATE new restaurant (assign next numeric string id)
 app.post('/restaurants', (req, res) => {
     try {
         const data = readData()
@@ -65,7 +57,6 @@ app.post('/restaurants', (req, res) => {
     }
 })
 
-// UPDATE by id (keep id unchanged)
 app.put('/restaurants/:id', (req, res) => {
     try {
         const data = readData()
@@ -80,7 +71,6 @@ app.put('/restaurants/:id', (req, res) => {
     }
 })
 
-// DELETE by id
 app.delete('/restaurants/:id', (req, res) => {
     try {
         const data = readData()
@@ -93,7 +83,6 @@ app.delete('/restaurants/:id', (req, res) => {
     }
 })
 
-// Root route -> index.html
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'))
 })
