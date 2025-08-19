@@ -32,7 +32,7 @@
     "cuisine": "American",
     "is_open": true,
     "price_range": "$",
-    "rating": 4.0,
+    "rating": 4,
     "number_of_reviews": 10
   },
   {
@@ -104,7 +104,7 @@
     "cuisine": "Bakery",
     "is_open": true,
     "price_range": "$",
-    "rating": 4.0,
+    "rating": 4,
     "number_of_reviews": 4
   },
   {
@@ -194,7 +194,7 @@
     "cuisine": "Chinese",
     "is_open": false,
     "price_range": "$",
-    "rating": 4.0,
+    "rating": 4,
     "number_of_reviews": 9
   },
   {
@@ -220,7 +220,7 @@
     "name": "Seafood Shack",
     "cuisine": "Seafood",
     "is_open": false,
-    "price_range": "$$$",
+    "price_range": "$",
     "rating": 4.7,
     "number_of_reviews": 10
   },
@@ -238,7 +238,7 @@
     "name": "Burrito Boulevard",
     "cuisine": "Mexican",
     "is_open": true,
-    "price_range": "$",
+    "price_range": "$$$",
     "rating": 4.1,
     "number_of_reviews": 14
   },
