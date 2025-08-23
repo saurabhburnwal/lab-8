@@ -118,7 +118,7 @@
   },
   {
     "id": "14",
-    "name": "Sushi Spot",
+    "name": "Sushi",
     "cuisine": "Japanese",
     "is_open": true,
     "price_range": "$$$",
@@ -259,14 +259,5 @@
     "price_range": "$$$",
     "rating": 4.6,
     "number_of_reviews": 9
-  },
-  {
-    "id": "30",
-    "name": "Pasta Point",
-    "cuisine": "Italian",
-    "is_open": true,
-    "price_range": "$$",
-    "rating": 4.2,
-    "number_of_reviews": 8
   }
 ]
